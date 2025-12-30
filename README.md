@@ -32,7 +32,7 @@ This starting point is **insecure by design** and represents common misconfigura
 
 ### Constraints
 - Keep the application **functional** end‑to‑end.
-- Time‑boxed: two sessions of ~4 hours (Day 1 & Day 2). Prioritize high‑impact controls.
+- Time‑boxed: two sessions of ~3 hours (Day 1 & Day 2). Prioritize high‑impact controls.
 - Do not introduce services that fundamentally change the app’s hosting model (e.g., replatforming to PaaS) unless agreed as a stretch goal.
 - Avoid hardcoded secrets or credentials in scripts or code.
 
