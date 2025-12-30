@@ -4,7 +4,7 @@ This repository uses an **insecure-by-design baseline environment** based on the
 
 **Original sources:**
 - Rob Foulkrod – IAAS2019 demo: https://github.com/rob-foulkrod/IAAS2019
-- MTT Demo Deploy reference: https://aka.ms/mttdemodeploy
+- MTT Demo Deploy reference: https://aka.ms/mttdemodeployand
 
 All credit for the original demo goes to the original author. This repository adapts the demo **for Microsoft Technical Training and security education purposes only**.
 
@@ -18,7 +18,7 @@ The goal of this setup is to provide attendees with a **realistic IaaS workload*
 - Limited network segmentation
 - Basic NSG rules
 - No enforced Zero Trust principles
-- Defender for Cloud not yet fully optimized
+- Microsoft Defender for Cloud not yet configured
 
 This environment serves as the **starting point** for the hackathon challenges.
 
@@ -120,31 +120,58 @@ This rule intentionally leaves room for improvement and will be reviewed during 
 
 ---
 
-## 5. Expected Baseline Architecture
+## 5. Microsoft Defender for Cloud – Initial State & Expectations
 
-After setup, the environment typically contains:
+At the start of the workshop, **nothing is configured in Microsoft Defender for Cloud**. This is intentional.
 
-- One virtual network with two subnets
-- A WebVM reachable from the internet
-- A SQLVM reachable from the WebVM
-- Basic NSG configuration
-- No Zero Trust enforcement
+### What Needs to Be Done First
 
-This is an **intentional insecure baseline**.
+Participants (or instructors) must at minimum:
+
+- Open **Microsoft Defender for Cloud** in the Azure Portal
+- Select the workshop subscription
+- Enable **Log Analytics auto-provisioning** (default workspace is sufficient)
+
+> Defender for Cloud does **not** automatically inventory or assess resources without this step.
+
+### Free Assessment – What to Expect
+
+Without enabling paid Defender plans, the **free assessment** provides:
+
+- Resource inventory (VMs, VNets, SQL VMs)
+- Initial Secure Score (limited control set)
+- Configuration-based security recommendations
+
+It does **not** include:
+
+- Vulnerability scanning
+- Threat detection or alerts
+- Endpoint or SQL workload protection
+
+### Typical Timing (Realistic)
+
+Security insights are **not immediate**. Expected timelines after enabling Defender for Cloud:
+
+- **5–15 minutes:** Subscription recognized
+- **15–60 minutes:** Resources appear in inventory
+- **30–90 minutes:** Initial Secure Score is calculated
+- **1–6 hours:** First recommendations are visible
+- **Up to 24 hours:** Stable and complete posture data
+
+This timing variance is normal and expected.
 
 ---
 
-## 6. Configuration Guidance
+## 6. Workshop Guidance
 
-During the workshop, participants should:
+While Defender for Cloud is discovering resources, participants should:
 
-- Avoid hardcoded secrets or shared credentials
-- Use identity-based access wherever possible
-- Maintain application availability while improving security
-- Focus on high-risk findings surfaced by Defender for Cloud
-- Document assumptions and trade-offs
+- Review and redesign the architecture
+- Identify obvious risks and trust boundaries
+- Plan Zero Trust improvements
+- Prepare justification for expected findings
 
-The goal is to **design and justify security improvements**, not to follow prescriptive instructions.
+Later Defender insights should **validate assumptions**, not drive design from scratch.
 
 ---
 
@@ -152,15 +179,15 @@ The goal is to **design and justify security improvements**, not to follow presc
 
 After the workshop:
 
-- Remove the deployed resources or delete the resource group
-- Ensure no public endpoints remain unintentionally exposed
-- Verify credentials are no longer valid
+- Remove deployed resources or delete the resource group
+- Confirm no public endpoints remain unintentionally exposed
+- Ensure credentials are no longer valid
 
 ---
 
 ## 8. Attribution
 
-This workshop environment is based on the following resources:
+This workshop environment is based on:
 
 - Rob Foulkrod – IAAS2019 demo
   - https://github.com/rob-foulkrod/IAAS2019
