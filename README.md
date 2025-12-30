@@ -27,7 +27,7 @@ This starting point is **insecure by design** and represents common misconfigura
 ## 2. Goals & Constraints
 
 ### Must‑Have Goals
-- **Perimeter protection:** Introduce a secure, inspected entry point for web traffic (e.g., WAF) and remove direct public exposure from compute instances.
+- **Perimeter protection:** Introduce a secure, inspected entry point for web traffic and remove direct public exposure from compute instances.
 - **Workload protection:** Use **Defender for Cloud (Plan 2)** to improve the environment’s **Secure Score** and reduce high‑severity recommendations.
 - **HTTPS exposure:** Expose the website externally via **HTTPS** (frontend). The **backend** may remain HTTP for this workshop’s time constraints.
 - **Zero Trust alignment:** Apply least privilege, verify explicitly, and assume breach principles across identity, network, and data.
