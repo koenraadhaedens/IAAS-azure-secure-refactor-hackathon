@@ -1,6 +1,8 @@
 
 # Secure Refactoring Hackathon – Web & SQL on Azure
 
+![IAAS Unsecure Diagram](https://raw.githubusercontent.com/koenraadhaedens/IAAS-azure-secure-refactor-hackathon/main/media/iaasunsecure.png)
+
 Welcome to the **Secure Refactoring Hackathon**. You will receive a deliberately **insecure** deployment and your challenge is to **redesign and harden** it using Zero Trust principles and **Microsoft Defender for Cloud (Plan 2)**. This is a hands-on, time‑boxed exercise. You may refactor architecture, configurations, and controls, provided the application remains functional.
 
 > **Important:** This README intentionally describes the scenario and challenges **without exposing solutions**. Your team must research, design, implement, and justify your choices.
