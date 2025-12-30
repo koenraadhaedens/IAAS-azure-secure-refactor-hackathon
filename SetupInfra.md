@@ -4,7 +4,7 @@ This repository uses an **insecure-by-design baseline environment** based on the
 
 **Original sources:**
 - Rob Foulkrod – IAAS2019 demo: https://github.com/rob-foulkrod/IAAS2019
-- MTT Demo Deploy reference: https://aka.ms/mttdemodeployand
+- MTT Demo Deploy reference: https://aka.ms/mttdemodeploy
 
 All credit for the original demo goes to the original author. This repository adapts the demo **for Microsoft Technical Training and security education purposes only**.
 
